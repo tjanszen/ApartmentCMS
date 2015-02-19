@@ -1,6 +1,6 @@
 'use strict';
 
-// var Apartment = require('../../models/apartment');
+var Apartment = require('../../models/apartment');
 var active = require('../../views/helpers/active');
 
 module.exports = {

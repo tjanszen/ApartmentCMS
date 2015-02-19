@@ -6,6 +6,7 @@ module.exports = [
 
   {method: 'get', path: '/apartments', config: require('../routes/apartments/index')},
   {method: 'get', path: '/apartments/new', config: require('../routes/apartments/new')},
+  {method: 'post', path: '/apartments', config: require('../routes/apartments/create')},
 
   {method: 'get', path: '/tenants', config: require('../routes/tenants/index')}
 ];
