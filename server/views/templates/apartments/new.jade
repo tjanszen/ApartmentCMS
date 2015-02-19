@@ -1,0 +1,29 @@
+extends ../../layouts/master
+block content
+  .row#apartment-new
+    form(method='post' action='/apartments')
+      .col-xs-12
+        .row
+          .col-xs-12
+            .form-group#name
+              input(type='text', name='name', placeholder='Enter Name' required autofocus)
+      .col-xs-12
+        .row
+          .col-xs-12
+            .form-group#photo
+              input(type='url', name='photo', placeholder='Image: http://' required)
+      .col-xs-12
+        .row
+          .col-xs-12
+            .form-group#numRooms
+              input(type='number', name='numRooms', placeholder='Number of Rooms' required)
+      .col-xs-12
+        .row
+          .col-xs-12
+            .form-group#roomPrice
+              input(type='number', name='roomPrice', placeholder='Room Rate' required)
+      .col-xs-12
+        .row
+          .col-xs-12
+            .form-group
+                buttun.btn.btn-default(type='submit') Add
