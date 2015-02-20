@@ -5,8 +5,8 @@ var active = require('../../views/helpers/active');
 
 module.exports = {
   handler: function(request, reply) {
-    Tenant.find(function(err, tenants) {
-      reply.view('templates/tenants/index', {path:'/tenants', active:active, tenants:tenants});
+    Tenant.findOne({_id:request.params.tenantId}, function(err, tenant) {
+      reply.view('templates/tenants/show', {path:'/tenants', active:active, tenant:tenant});
     });
   }
 };

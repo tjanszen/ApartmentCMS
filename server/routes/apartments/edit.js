@@ -3,11 +3,10 @@
 var Apartment = require('../../models/apartment');
 var active = require('../../views/helpers/active');
 
-
 module.exports = {
   handler: function(request, reply) {
-    Apartment.find(function(err, apartments) {
-      reply.view('templates/apartments/index', {path:'/apartments', active:active, apartments:apartments});
+    Apartment.findOne({_id:request.params.apartmentId},function(err, apartment) {
+      reply.view('templates/apartments/edit', {path:'/apartments', active:active, apartment:apartment});
     });
   }
 };

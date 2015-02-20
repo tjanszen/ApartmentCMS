@@ -5,11 +5,18 @@ block content
     button.btn.btn-default
       a(href='/apartments')
         span.glyphicon.glyphicon-chevron-left
-    form#trash-form(method='post', action='/apartments/#{apartment._id}/delete')
+    form.trash-form(method='post', action='/apartments/#{apartment._id}/delete')
       button(type='submit').btn.btn-danger
         i.fa.fa-trash-o
-    button.btn.btn-info
-      span.glyphicon.glyphicon-pencil
+    a.btn.btn-info(href='/apartments/#{apartment._id}/edit')
+      i.fa.fa-pencil
+        
+    form(method='post', action='/apartments/#{apartment._id}/rent')
+      .form-group
+        select#tenantName.form-control.input-sm(name='tenantId')
+          each tenant in tenants
+            option(value=tenant._id)= tenant.name
+        button.btn.btn-default(type='submit') Rent
     
     .row
       .col-sm-4.col-xs-12.detail-page-col
@@ -17,4 +24,6 @@ block content
         h3 #{apartment.name}
         p Starting at $ #{apartment.roomPrice}
         p Total Rooms #{apartment.numRooms}
+        span Available: 
+        span= apartment.numRooms - apartment.tenants.length
         p Rooms Rented #{apartment.numRented}

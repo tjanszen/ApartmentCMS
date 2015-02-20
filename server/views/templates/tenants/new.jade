@@ -1,0 +1,19 @@
+extends ../../layouts/master
+block content
+  .row#tenant-new
+    form(method='post' action='/tenants')
+      .col-xs-12
+        .row
+          .col-xs-12
+            .form-group#name
+              input(type='text', name='name', placeholder='Client Name' required autofocus)
+      .col-xs-12
+        .row
+          .col-xs-12
+            .form-group#photo
+              input(type='url', name='photo', placeholder='Client http://' required)
+      .col-xs-12
+        .row
+          .col-xs-12
+            .form-group
+                button.btn.btn-default(type='submit') Add
