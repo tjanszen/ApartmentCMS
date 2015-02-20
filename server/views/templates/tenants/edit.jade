@@ -1,0 +1,44 @@
+extends ../../layouts/master
+block content
+  h3= tenant.name 
+  .row.button-row
+    button.btn.btn-default
+      a(href='/tenants/#{tenant._id}')
+        span.glyphicon.glyphicon-chevron-left
+  .row#apartment-new
+    form(method='post' action='/tenants/#{tenant._id}')
+      .col-xs-12
+        .row
+          .col-xs-12
+            .form-group#name
+              label Name
+              input.form-control(value=tenant.name, type='text', name='name', required autofocus)
+      .col-xs-12
+        .row
+          .col-xs-12
+            .form-group#photo
+              label Photo
+              input.form-control(value=tenant.photo, type='url', name='photo', required)
+      .col-xs-12
+        .row
+          .col-xs-12
+            .form-group#email
+              label Email
+              input.form-control(value=tenant.email, type='text', name='email', required)
+      .col-xs-12
+        .row
+          .col-xs-12
+            .form-group#age
+              label age
+              input.form-control(value=tenant.age, type='number', name='age', required)
+      .col-xs-12
+        .row
+          .col-xs-12
+            .form-group
+              label Gender
+              input.form-control(value=tenant.gender, type='text', name='gender', required)
+      .col-xs-12
+        .row
+          .col-xs-12
+            .form-group
+                button.btn.btn-default(type='submit') Add

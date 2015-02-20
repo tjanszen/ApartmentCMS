@@ -8,6 +8,7 @@ var apartmentSchema = mongoose.Schema({
     numRooms: Number,
     roomPrice: Number,
     desc: String,
+    sqrFeet: Number,
     tenants:[{type: mongoose.Schema.ObjectId, ref: 'Tenant'}]
 
 });

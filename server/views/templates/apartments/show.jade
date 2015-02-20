@@ -2,28 +2,36 @@ extends ../../layouts/master
 block content
     h3 Apartment Details
     
-    button.btn.btn-default
-      a(href='/apartments')
-        span.glyphicon.glyphicon-chevron-left
-    form.trash-form(method='post', action='/apartments/#{apartment._id}/delete')
-      button(type='submit').btn.btn-danger
-        i.fa.fa-trash-o
-    a.btn.btn-info(href='/apartments/#{apartment._id}/edit')
-      i.fa.fa-pencil
-        
-    form(method='post', action='/apartments/#{apartment._id}/rent')
-      .form-group
-        select#tenantName.form-control.input-sm(name='tenantId')
-          each tenant in tenants
-            option(value=tenant._id)= tenant.name
-        button.btn.btn-default(type='submit') Rent
-    
+    .row.button-row
+      button.btn.btn-default
+        a(href='/apartments')
+          span.glyphicon.glyphicon-chevron-left
+      form.trash-form(method='post', action='/apartments/#{apartment._id}/delete')
+        button(type='submit').btn.btn-default
+          i.fa.fa-trash-o
+      a.btn.btn-default(href='/apartments/#{apartment._id}/edit')
+        span.glyphicon.glyphicon-pencil
+          
+    col-xs-6
+      form(method='post', action='/apartments/#{apartment._id}/rent')
+        .form-group
+          select#tenantName.form-control.input-sm(name='tenantId')
+            each tenant in tenants
+              option(value=tenant._id)= tenant.name
+          button.btn.btn-default(type='submit') Rent
+      
     .row
       .col-sm-4.col-xs-12.detail-page-col
         img(src='#{apartment.photo}')
-        h3 #{apartment.name}
-        p Starting at $ #{apartment.roomPrice}
-        p Total Rooms #{apartment.numRooms}
-        span Available: 
-        span= apartment.numRooms - apartment.tenants.length
-        p Rooms Rented #{apartment.numRented}
+    .row
+      .col-xs-12
+        .panel.panel-primary
+          .panel-heading
+            h3.panel-titlen #{apartment.name}
+          .panel-body
+            ul.list-group
+              li.list-group-item $ #{apartment.roomPrice} / room
+              li.list-group-item Total Rooms: #{apartment.numRooms} 
+              li.list-group-item Occupied #{apartment.tenants.length}
+              li.list-group-item Square Ft: #{apartment.sqrFeet}
+              li.list-group-item #{apartment.desc}

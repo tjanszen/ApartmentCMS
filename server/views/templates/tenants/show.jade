@@ -6,12 +6,26 @@ block content
       a(href='/tenants')
         span.glyphicon.glyphicon-chevron-left
     form.trash-form(method='post', action='/tenants/#{tenant._id}/delete')
-      button(type='submit').btn.btn-danger
+      button(type='submit').btn.btn-default
         i.fa.fa-trash-o
-    button.btn.btn-info
+    a.btn.btn-default(href='/tenants/#{tenant._id}/edit')
       span.glyphicon.glyphicon-pencil
     
     .row
       .col-sm-4.col-xs-12.detail-page-col
         img(src='#{tenant.photo}')
-        h3 #{tenant.name}
+    .row
+      .col-xs-12
+        .panel.panel-primary
+          .panel-heading
+            h3.panel-titlen #{tenant.name}
+          .panel-body
+            ul.list-group
+              li.list-group-item #{tenant.email}
+              li.list-group-item #{tenant.gender}
+              li.list-group-item #{tenant.age}
+              if tenant.hasRented
+                li.list-group-item
+                  span.glyphicon.glyphicon-ok &nbsp; Renting
+                li.list-group-item #{tenant.unit}
+                  

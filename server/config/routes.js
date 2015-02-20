@@ -18,6 +18,7 @@ module.exports = [
   {method: 'post', path: '/tenants', config: require('../routes/tenants/create')},
   {method: 'get', path: '/tenants/{tenantId}', config: require('../routes/tenants/show')},
   {method: 'post', path: '/tenants/{tenantId}/delete', config: require('../routes/tenants/destroy')},
+  {method: 'get', path: '/tenants/{tenantId}/edit', config: require('../routes/tenants/edit')},
 
-  {method: 'get', path: '/admin', config: require('../routes/admin/index')},
+  {method: 'get', path: '/admin', config: require('../routes/admin/index')}
 ];

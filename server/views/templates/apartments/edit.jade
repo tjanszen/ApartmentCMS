@@ -1,31 +1,50 @@
 extends ../../layouts/master
 block content
   h3= apartment.name 
+  .row.button-row
+    button.btn.btn-default
+      a(href='/apartments/#{apartment._id}')
+        span.glyphicon.glyphicon-chevron-left
   .row#apartment-new
     form(method='post' action='/apartments/#{apartment._id}')
       .col-xs-12
         .row
           .col-xs-12
             .form-group#name
-              input(value=apartment.name, type='text', name='name', placeholder='Apartment Name' required autofocus)
+              label Name
+              input.form-control(value=apartment.name, type='text', name='name', required autofocus)
       .col-xs-12
         .row
           .col-xs-12
             .form-group#photo
-              input(value=apartment.photo type='url', name='photo', placeholder='Image: http://' required)
+              label Photo
+              input.form-control(value=apartment.photo, type='url', name='photo', required)
       .col-xs-12
         .row
           .col-xs-12
             .form-group#numRooms
-              input(value=apartment.numRooms type='number', name='numRooms', placeholder='Number of Rooms' required)
+              label Number of Rooms:
+              input.form-control(value=apartment.numRooms, type='number', name='numRooms', required)
       .col-xs-12
         .row
           .col-xs-12
             .form-group#roomPrice
-              input(value=apartment.roomPrice type='number', name='roomPrice', placeholder='Room Rate' required)
+              label Room Price
+              input.form-control(value=apartment.roomPrice, type='number', name='roomPrice', required)
+      .col-xs-12
+        .row
+          .col-xs-12
+            .form-group#sqrFeet
+              label Square Feet
+              input.form-control(value=apartment.sqrFeet, type='number', name='sqrFeet', required)
+      .col-xs-12
+        .row
+          .col-xs-12
+            .form-group#desc
+              label Description
+              textarea#desc.form-control(value=apartment.desc, type='text', name='desc' )
       .col-xs-12
         .row
           .col-xs-12
             .form-group
-              button.btn.btn-default(type='submit') Update
-      
+                button.btn.btn-default(type='submit') Add

@@ -1,12 +1,65 @@
+.navbar{
+  border-radius:0;
+}
 .navbar-nav i{
   color: white;
+}
+
+/* Buttons */
+
+.btn{
+  border-radius: 0;
+  margin-right:3px;
+}
+.row.button-row{
+  margin-bottom:30px;
+  margin-left: 6px;
+}
+span.glyphicon.glyphicon-plus,
+span.glyphicon.glyphicon-chevron-left{
+  color:white;
+}
+
+/** Home Page **/
+
+h1.homepage, span.homepage-u{
+  font-family: 'Lato', Helvetica;
+  font-weight: 100;
+  top: 200px;
+  position: absolute;
+  width:100%;
+  text-align: center;
+  font-size: 3em;
+  color: #20303d;
+  animation: fadeUpInH 4s;
+  -webkit-animation: fadeUpInH 4s; /* Safari and Chrome */
+}
+
+span.homepage-u{
+  top: 275px;
+  font-size: 5em;
+  animation: fadeUpInSpan 4s;
+  -webkit-animation: fadeUpInSpan 4s; /* Safari and Chrome */
+}
+
+@-webkit-keyframes fadeUpInSpan /* Safari and Chrome */
+{
+  from { opacity:0; top:500px; }
+  to { opacity:1; top: 275px; }
+}
+
+
+@-webkit-keyframes fadeUpInH /* Safari and Chrome */
+{
+  from { opacity:0; top:425px; }
+  to { opacity:1; top: 200px; }
 }
 
 /** apartment-new **/
 
 .landing-page-col a img{
-  width:200px;
-  height:200px;
+  width:210px;
+  height:210px;
 }
 
 .landing-page-col h3{
@@ -24,4 +77,15 @@
 
 .trash-form{
   display: inline-block;
+}
+
+/** Apartment SHOW */
+select#tenantName {
+width: 25%;
+display:inline-block;
+}
+
+/* panels */
+.panel.panel-primary{
+  margin-top: 10px;
 }

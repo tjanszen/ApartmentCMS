@@ -1,27 +1,44 @@
 extends ../../layouts/master
 block content
+          
   .row#apartment-new
     form(method='post' action='/apartments')
       .col-xs-12
         .row
           .col-xs-12
             .form-group#name
-              input(type='text', name='name', placeholder='Apartment Name' required autofocus)
+              label Name
+              input.form-control(type='text', name='name', placeholder='Apartment Name' required autofocus)
       .col-xs-12
         .row
           .col-xs-12
             .form-group#photo
-              input(type='url', name='photo', placeholder='Image: http://' required)
+              label Photo
+              input.form-control(type='url', name='photo', placeholder='Image: http://' required)
       .col-xs-12
         .row
           .col-xs-12
             .form-group#numRooms
-              input(type='number', name='numRooms', placeholder='Number of Rooms' required)
+              label Number of Rooms:
+              input.form-control(type='number', name='numRooms', placeholder='Number of Rooms' required)
       .col-xs-12
         .row
           .col-xs-12
             .form-group#roomPrice
-              input(type='number', name='roomPrice', placeholder='Room Rate' required)
+              label Room Price
+              input.form-control(type='number', name='roomPrice', placeholder='Room Rate' required)
+      .col-xs-12
+        .row
+          .col-xs-12
+            .form-group#sqrFeet
+              label Square Feet
+              input.form-control(type='number', name='sqrFeet', placeholder='Square Feet' required)
+      .col-xs-12
+        .row
+          .col-xs-12
+            .form-group#sqrFeet
+              label Description
+              textarea#desc.form-control(type='text', name='desc' placeholder="Breif Description")
       .col-xs-12
         .row
           .col-xs-12

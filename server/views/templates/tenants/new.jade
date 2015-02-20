@@ -6,12 +6,32 @@ block content
         .row
           .col-xs-12
             .form-group#name
-              input(type='text', name='name', placeholder='Client Name' required autofocus)
+              label Name
+              input.form-control(type='text', name='name', placeholder='Name' required autofocus)
       .col-xs-12
         .row
           .col-xs-12
             .form-group#photo
-              input(type='url', name='photo', placeholder='Client http://' required)
+              label Photo
+              input.form-control(type='url', name='photo', placeholder='http://' required)
+      .col-xs-12
+        .row
+          .col-xs-12
+            .form-group#numRooms
+              label Email
+              input.form-control(type='string', name='email', placeholder='example@example.com' required)
+      .col-xs-12
+        .row
+          .col-xs-12
+            .form-group#roomPrice
+              label Age
+              input.form-control(type='number', name='age', placeholder='Age' required)
+      .col-xs-12
+        .row
+          .col-xs-12
+            .form-group#sqrFeet
+              label Gender
+              input.form-control(type='test', name='gender', placeholder='Male or Female?' required)
       .col-xs-12
         .row
           .col-xs-12
