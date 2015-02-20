@@ -5,3 +5,11 @@ block content
   button.btn.btn-default
     a(href='apartments/new')
       span.glyphicon.glyphicon-plus
+        
+  .row
+    each apartment in apartments
+      .col-sm-4.col-xs-12.landing-page-col
+        a(href='apartments/#{apartment._id}')
+          img(src='#{apartment.photo}')
+        h3 #{apartment.name}
+        p Starting at $ #{apartment.roomPrice}

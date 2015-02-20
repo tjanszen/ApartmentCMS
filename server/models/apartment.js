@@ -6,10 +6,9 @@ var apartmentSchema = mongoose.Schema({
     name: String,
     photo: String,
     numRooms: Number,
-    numVacant: Number,
-    numRented:Number,
+    numRented: 0,
     roomPrice: Number,
-    description: String,
+    desc: String,
     isFull: {type: Boolean, default: false}
 });
 

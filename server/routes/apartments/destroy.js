@@ -4,9 +4,7 @@ var Apartment = require('../../models/apartment');
 
 module.exports = {
   handler: function(request, reply) {
-    var apartment = new Apartment(request.payload);
-    console.log(apartment);
-    apartment.save(function() {
+    Apartment.remove({_id:request.params.apartmentId}, function() {
       reply.redirect('/apartments');
     });
   }

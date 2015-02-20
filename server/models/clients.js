@@ -6,6 +6,7 @@ var clientSchema = mongoose.Schema({
   name: String,
   photo: String,
   renting: {type: Boolean, default: false},
+  unit: [{type: mongoose.Schema.ObjectId, ref: 'Apartment'}],
   leaseMonths: Number
 });
 
